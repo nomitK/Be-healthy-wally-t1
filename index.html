@@ -36,7 +36,7 @@
         }
         .heartbeat {
             display: inline-block;
-            animation: heartbeat 1.5s infinite; /* Define a animação de pulso */
+            animation: heartbeat 1.5s infinite paused; /* Define a animação de pulso inicial como pausada */
         }
         @keyframes heartbeat {
             0%, 20% {
@@ -61,14 +61,12 @@
     <main>
         <h2>Conteúdo Principal</h2>
         <p>Este é o corpo da página onde você pode adicionar seu conteúdo.</p>
-        
-        <div class="heartbeat">
+
+        <div class="heartbeat" id="heartContainer">
             <img src="https://images.hindustantimes.com/img/2022/01/27/550x309/healthy-gdae63cff2_1280_1643268445755_1643268464696.png" alt="Coração ECG" width="200" height="200"/> <!-- Substitua o URL acima -->
         </div>
 
         <button id="myButton">Clique Aqui</button>
-
-        <div id="transcript"></div>
     </main>
 
     <footer>
@@ -76,9 +74,34 @@
     </footer>
 
     <script>
-        document.getElementById('myButton').onclick = function() {
-            alert('Você clicou no botão!');
+        // Configuração do reconhecimento de fala
+        const recognition = new (window.SpeechRecognition || window.webkit.SpeechRecognition)();
+        recognition.interimResults = true;
+
+        // Contêiner do coração
+        const heartContainer = document.getElementById('heartContainer');
+
+        // Iniciar reconhecimento de fala
+        function startRecognition() {
+            recognition.start();
+        }
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript.toLowerCase();
+            console.log(transcript); // Para depuração
+
+            if (transcript.includes('pulsar')) {
+                heartContainer.style.animationPlayState = 'running'; // Começa a animação
+            } else if (transcript.includes('parar')) {
+                heartContainer.style.animationPlayState = 'paused'; // Para a animação
+            }
         };
+
+        recognition.onend = () => {
+            startRecognition(); // Reinicia o reconhecimento após terminar
+        };
+
+        startRecognition(); // Inicia o reconhecimento quando a página carrega
     </script>
 
 </body>
