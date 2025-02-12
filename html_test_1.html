@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Teste</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Seções</title>
+    <style>
+        body {
+            margin: 0; /* Remove margens padrão */
+            font-family: Arial, sans-serif; /* Define a fonte */
+        }
+        header {
+            background-color: gold; /* Cor de fundo do header */
+            padding: 20px;
+            text-align: center; /* Centraliza o texto */
+        }
+        main {
+            background-color: black; /* Cor de fundo do corpo */
+            color: white; /* Cor do texto no corpo */
+            padding: 20px;
+            min-height: 400px; /* Altura mínima no corpo */
+        }
+        footer {
+            background-color: gold; /* Cor de fundo do footer */
+            padding: 10px;
+            text-align: center; /* Centraliza o texto */
+        }
+    </style>
 </head>
 <body>
-    <h1>Teste de Página</h1>
-    <p>Se você vê isso, o HTML está funcionando!</p>
+
+    <header>
+        <h1>Bem-vindo à Minha Página Web</h1>
+    </header>
+
+    <main>
+        <h2>Conteúdo Principal</h2>
+        <p>Este é o corpo da página onde você pode adicionar seu conteúdo.</p>
+        
+        <button id="myButton">Clique Aqui</button>
+
+        <div id="transcript"></div>
+    </main>
+
+    <footer>
+        <p>© 2025 Minha Página Web</p>
+    </footer>
+
+    <script>
+        document.getElementById('myButton').onclick = function() {
+            alert('Você clicou no botão!');
+        };
+    </script>
+
 </body>
 </html>
