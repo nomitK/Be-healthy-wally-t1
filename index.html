@@ -6,47 +6,47 @@
     <title>Página com Seções</title>
     <style>
         body {
-            margin: 0; /* Remove margens padrão */
-            font-family: Arial, sans-serif; /* Define a fonte */
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
         header {
-            background-color: #4CAF50; /* Verde claro */
+            background-color: #4CAF50;
             padding: 20px;
-            position: relative; /* Para posicionar o texto dentro do header */
-            color: white; /* Cor do texto no header */
+            position: relative;
+            color: white;
         }
         .header-text {
-            position: absolute; /* Posiciona o texto em relação ao header */
-            top: 10px; /* Distância do topo */
-            right: 20px; /* Distância da direita */
-            font-size: 18px; /* Tamanho da fonte */
-            color: white; /* Cor do texto */
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 18px;
+            color: white;
         }
         main {
-            background-color: black; /* Cor de fundo do corpo */
-            color: white; /* Cor do texto no corpo */
+            background-color: black;
+            color: white;
             padding: 20px;
-            min-height: 400px; /* Altura mínima no corpo */
-            text-align: center; /* Centraliza o texto */
+            min-height: 400px;
+            text-align: center;
         }
         footer {
-            background-color: gold; /* Cor de fundo do footer */
+            background-color: gold;
             padding: 10px;
-            text-align: center; /* Centraliza o texto */
+            text-align: center;
         }
         .heartbeat {
             display: inline-block;
-            animation: heartbeat 1.5s infinite paused; /* Define a animação de pulso inicial como pausada */
+            animation: heartbeat 1.5s infinite paused;
         }
         @keyframes heartbeat {
             0%, 20% {
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.1); /* Aumenta o tamanho do coração */
+                transform: scale(1.1);
             }
             100% {
-                transform: scale(1); /* Retorna ao tamanho normal */
+                transform: scale(1);
             }
         }
     </style>
@@ -54,8 +54,8 @@
 <body>
 
     <header>
-        <h1>Bem-vindo à Minha Página sobre Vida Saudável e Próspera V2</h1>
-        <div class="header-text">be-healthy.ai</div> <!-- Texto no canto superior direito -->
+        <h1>Bem-vindo à Minha Página sobre Vida Saudável e Próspera V3</h1>
+        <div class="header-text">be-healthy.ai</div>
     </header>
 
     <main>
@@ -63,7 +63,7 @@
         <p>Este é o corpo da página onde você pode adicionar seu conteúdo.</p>
 
         <div class="heartbeat" id="heartContainer">
-            <img src="https://images.hindustantimes.com/img/2022/01/27/550x309/healthy-gdae63cff2_1280_1643268445755_1643268464696.png" alt="Coração ECG" width="200" height="200"/> <!-- Imagem do coração -->
+            <img src="https://images.hindustantimes.com/img/2022/01/27/550x309/healthy-gdae63cff2_1280_1643268445755_1643268464696.png" alt="Coração ECG" width="200" height="200"/>
         </div>
 
         <button id="myButton">Clique Aqui</button>
@@ -109,8 +109,6 @@
             startRecognition(); 
         } else {
             console.error("SpeechRecognition não suportado neste navegador.");
+            alert("Desculpe, esta funcionalidade de reconhecimento de voz não é suportada pelo seu navegador. Tente usar o Google Chrome.");
         }
-    </script>
-
-</body>
-</html>
+    </script
